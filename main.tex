@@ -1,0 +1,150 @@
+\documentclass{article}         %% ceci est un commentaire (apres le caractere %)
+    %% adapte le style article aux conventions francophones
+\usepackage[T1]{fontenc}          %% permet d'utiliser les caractères accentués
+% \usepackage[dvips]{graphicx}      %% permet d'importer des graphiques au format .EPS (postscript)
+\usepackage{fancybox}		   %% package utiliser pour avoir un encadré 3D des images
+\usepackage{makeidx}              %% permet de générer un index automatiquement
+\usepackage{float}
+\usepackage{todonotes}
+
+\usepackage[toc,page]{appendix} 
+
+% BEGIN: add footnote in tabular
+
+\newcounter{notetab}
+\newcommand{\zero}{\setcounter{notetab}{0}}
+\newcommand{\ntm}{\footnotemark\addtocounter{notetab}{1}}
+\newcommand{\initnt}{\addtocounter{footnote}{-\value{notetab}}}
+\newcommand{\ntt}[1]{%
+   \addtocounter{footnote}{1}
+   \footnotetext{#1}}
+
+% END: add footnote in tabular
+
+% BEGIN: remove acm copyright
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
+\makeatother
+% END: remove acm copyright
+
+\title{Introduction to Play! framework}     %% \title est une macro, entre { } figure son premier argument
+\author{Jonathan Pastor}        %% idem
+
+\makeindex		    %% macro qui permet de générer l'index
+\bibliographystyle{prsty}	  %% le style utilisé pour créer la bibliographie
+\begin{document}                  %% signale le début du document
+
+\maketitle                        %% produire à cet endroit le titre de l'article à partir des informations fournies ci-dessus (title, author)
+
+
+\section{Introduction}
+
+The objective of this course is to introduce the basic features of a modern web framework, through the study of a java compatible framework: Play! \footnote{cf. http://www.playframework.com/documentation/1.2.5/home}.
+\newline
+\newline
+During this course, the student will learn how to develop a small web application. This application will use a database for storing objects, and users will interact with it through using web forms.
+\newline
+\newline
+The students be asked to work in pairs: each pair will develop a dynamic website: the specifications are given in the section \ref{specs}. The specifications are a set of constraints: Each constraint that is satisfied gives points, These constraints will be evaluated by a jury during the oral defence of the project.
+
+
+
+\section{The Subject of the project}
+
+The pairs are free to find a subject that will drive their project. Student are free to use this example of a website that sells sandwiches: 
+
+\begin{quotation}
+A sandwich shop asks Ecole des Mines de Nantes students to develop an online shop. Customers will be able to order sandwich on a front-end website. When an order is validated by a customer, it is processed by an administrator that will prepare the order. The administrator can create or modify sandwiches. \par
+\raggedleft Project subject for year 2012-2013.
+\end{quotation}
+
+\begin{quotation}
+A customer will create orders. Orders belong to one customer. An order is a set of association between a sandwich and a number. A sandwich is composed by a set of ingredients. \par
+\raggedleft Example of data structure for year 2012-2013.
+\end{quotation}
+
+
+
+\section{The Specifications}
+\label{specs}
+
+\zero
+\begin{tabular}{|p{2cm}|p{10cm}|p{1cm}|}
+  \hline
+  Constraint & Description & Points \\
+
+  \hline
+  Controller-1 & Develop a controller for the frontend & 1 pts \\
+  Controller-2 & Develop a controller for the backend & 1 pts \\
+  Controller-3 & At least one controller asks data with a custom SQL query & 1 pts \\
+
+  \hline
+  View-1 & Display data (a list) with an HTML table & 1 pts \\
+  View-2 & Display data (a list) with an HTML list & 1 pts \\
+  View-3 & Display data (an element) with details & 1 pts \\
+  View-4 & Create a transition between 2 views & 1 pts \\
+
+  \hline
+  Database-1 & Database contains at least one complex entity (that contains a set of other entities, cf appendix \ref{complex_entity}) & 3 pts \\
+  Database-1 & The database is in third normal form \ntm & 1 pts \\
+
+  \hline
+  CRUD & At least one complex data entity have create, read, update, delete actions. These actions are located in the backend. & 3 pts \\
+
+  \hline
+  AJAX-1 & At least one controller have a method that produce JSON or XML & 1 pts \\
+  AJAX-2 & At least one view gets data dynamically with an AJAX request & 1 pts \\
+
+  \hline
+  Design-1 & Use a CSS framework (Bootstrap\ntm, Zurb Foundation \ntm, PureCSS\ntm, ...) & 1 pts \\
+  Design-2 & The application has a clean design & 1 pts \\
+  Design-2 & The application has a good ergonomy & 1 pts \\
+  Design-3 & The application has been developed around prototyping methodology \ntm & 1 pts \\
+
+  \hline
+  Total & \multicolumn{2}{r|}{   20 pts \hspace{1 mm}} \\
+
+  \hline
+  Bonus-1 & Display statistics with a framework like D3.js \ntm & 1 pts \\
+
+  \hline
+\end{tabular}
+
+\initnt
+\ntt{cf. http://en.wikipedia.org/wiki/Third\_normal\_form}
+\ntt{cf. http://getbootstrap.com/}
+\ntt{cf. http://foundation.zurb.com/}
+\ntt{cf. http://purecss.io/}
+\ntt{cf. http://en.wikipedia.org/wiki/Software\_prototyping}
+\ntt{cf. http://d3js.org/}
+
+\newpage
+
+\begin{appendices}
+
+\section{Complex Data Entity}
+\label{complex_entity}
+
+Here is an example of complex data (entity Sandwich):
+
+\begin{scriptsize}
+\begin{verbatim}
+class Sandwich {
+    String name;
+    List<Ingredient> ingredients;
+}
+
+[...]
+
+class Ingredient {
+    String name
+}
+\end{verbatim}
+\end{scriptsize}
+
+In this example a sandwich contains a set of ingredients.
+\end{appendices}
+
+
+\end{document} 
