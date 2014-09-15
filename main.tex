@@ -29,43 +29,81 @@
 \makeatother
 % END: remove acm copyright
 
-\title{Introduction to Play! framework}     %% \title est une macro, entre { } figure son premier argument
-\author{Jonathan Pastor}        %% idem
+\title{Introduction to Web development with the Django framework.}
+\author{Walid Benghabrit, Florent Marchand de Kerchove, Jonathan Pastor}
 
-\makeindex		    %% macro qui permet de générer l'index
-\bibliographystyle{prsty}	  %% le style utilisé pour créer la bibliographie
-\begin{document}                  %% signale le début du document
+\makeindex
+\bibliographystyle{prsty}
+\begin{document}
 
-\maketitle                        %% produire à cet endroit le titre de l'article à partir des informations fournies ci-dessus (title, author)
+\maketitle
 
 
 \section{Introduction}
 
-The objective of this course is to introduce the basic features of a modern web framework, through the study of a java compatible Model-View-Controller \footnote{cf. http://en.wikipedia.org/wiki/Model-view-controller} (MVC) web framework: Play! \footnote{cf. http://www.playframework.com/documentation/1.2.5/home}.
+The objective of this course is to introduce the basics of a modern web 
+framework, through the study of a java compatible Model-View-Controller 
+\footnote{cf. http://en.wikipedia.org/wiki/Model-view-controller} (MVC) web 
+framework: Django. 
+\footnote{https://www.djangoproject.com}.
 \newline
 \newline
-During this course, students will learn how to develop a small web application. This application will use a database for storing objects, and users will interact with it by using web forms.
+During this course, students will learn how to develop a small web application. 
+This application will use a database for storing objects, and users will 
+interact with it by using web forms.
 \newline
 \newline
-Students will be asked to work in pairs: each pair will develop a dynamic website. Specifications are given in the section \ref{specs} : it is a set of constraints where each satisfied constraint gives points. The satisfaction of the constraints will be evaluated during an oral defense.
+Students will be asked to work in pairs: each pair will develop a dynamic 
+website. Specifications are given in the section \ref{specs} : it is a set of 
+constraints where each satisfied constraint gives points. The satisfaction of 
+the constraints will be evaluated during an oral defense.
 
+
+\section{Objective of the course}
+
+Students will learn how to develop modern web applications. The example used in
+this course will be the development of a web application that will be in charge
+of managing scores, as during sportive events. 
 
 
 \section{The Subject of the project}
 
-The pairs will develop an application that will be the response to the following needs:
+Students will be divided in pairs: each pairs will develop an application that 
+will be responsible of managing scores: : users of this application will be able
+in a first time to insert/modify results of confrontation between players, and 
+in a second time to provide advanced features such as different kind of sportive
+events (tournaments, championships, leagues, ...) or analysis of results.
 
 \begin{quotation}
-Professors of the Computer Science (CS) department would like to be able to create meetings involving several participants. The involved people would review the meeting and let a comment about the proposed meeting. It would be also possible to handle conflicts between meetings. People may be notified when they take part to a meeting.\par
-\raggedleft Project subject for year 2013-2014.
+We, members of the Computer Science (CS) department, we think that a healthy 
+spirit in a healthy body is a good leimotiv. That is why we enjoy doing sportive
+activities, especially when they require a competitive spirit. Unfortunately, 
+due to our many sportive activities, we have bad memories and we cannot remember
+the scores. That is why we would like to be able to manage the results of these
+confrontations with beautiful web application. At the end of each confrontations
+between members of the CS department, they will insert a new entry in the 
+database of this web application, without requiring a big effort.\par 
+\raggedleft Project subject for year 2014-2015.
 \end{quotation}
 
 \begin{quotation}
-Meetings are created by a user. A meeting involve one or several people. A meeting can contains comments from any member of the meeting. A member can receive notifications about some of his meetings.\par
-\raggedleft Example of data structure for year 2013-2014.
+Scores are created by one of the particpants of the event (a user). An event
+can involve one or several people. A confrontation result can contains comments 
+from any of the participants of the meeting. When a new score is added, its
+participants may be notified.\par \raggedleft Minimal web application for year 
+2014-2015.
 \end{quotation}
 
+The previous illustrates the minimal requirements for this project. \textbf{
+Students are asked to develop at least one original feature that will complete 
+this web application}, such as providing:
 
+\begin{itemize}
+  \item support for diffent kind of confrontations (tournament, championship, 
+  leagues, ....).
+  \item support for advanced analysis of scores.
+  \item implementig a complex data model.
+\end{itemize}
 
 \section{The Specifications}
 \label{specs}
@@ -101,7 +139,6 @@ Meetings are created by a user. A meeting involve one or several people. A meeti
 
   \hline
   Controller-1 & Develop a controller for the frontend & 1 pts \\
-  Controller-2 & Develop a controller for the backend & 1 pts \\
   Controller-3 & At least one controller asks data with a custom SQL query & 1 pts \\
 
   \hline
@@ -111,14 +148,13 @@ Meetings are created by a user. A meeting involve one or several people. A meeti
 
   \hline
   Database-1 & Database contains at least one complex entity (that contains a set of other entities, cf appendix \ref{complex_entity}) & 3 pts \\
-  Database-1 & The database is in third normal form \ntm & 1 pts \\
 
   \hline
   CRUD & At least one complex data entity have create, read, update and delete actions. These actions are located in the backend. & 3 pts \\
 
   \hline
-  AJAX-1 & At least one controller have a method that produce JSON or XML. & 1 pts \\
-  AJAX-2 & At least one view gets data dynamically with an AJAX request. & 1 pts \\
+  AJAX-1 & At least one controller have a method that produce JSON or XML. & 2 pts \\
+  AJAX-2 & At least one view gets data dynamically with an AJAX request. & 2 pts \\
 
   \hline
   Design-1 & Use a CSS framework (Bootstrap\ntm, Zurb Foundation \ntm, PureCSS\ntm, ...). & 1 pts \\
@@ -150,25 +186,6 @@ Evaluation will be made during an oral defense : a jury will check if the studen
 
 \begin{appendices}
 
-\section{Complex Data Entity}
-\label{complex_entity}
-
-Here is an example of complex data:
-
-\begin{scriptsize}
-\begin{verbatim}
-class A {
-    List<B> listOfBs;
-}
-
-[...]
-
-class B {
-}
-\end{verbatim}
-\end{scriptsize}
-
-In this example, entity A can contains several B entities.
 \end{appendices}
 
 
