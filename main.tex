@@ -2,7 +2,7 @@
     %% adapte le style article aux conventions francophones
 \usepackage[T1]{fontenc}          %% permet d'utiliser les caractères accentués
 % \usepackage[dvips]{graphicx}      %% permet d'importer des graphiques au format .EPS (postscript)
-\usepackage{fancybox}		   %% package utiliser pour avoir un encadré 3D des images
+\usepackage{fancybox}      %% package utiliser pour avoir un encadré 3D des images
 \usepackage{makeidx}              %% permet de générer un index automatiquement
 \usepackage{float}
 \usepackage{todonotes}
@@ -111,20 +111,20 @@ this web application}, such as providing:
 \subsection{Fonctional Specification (10pts)}
 
 \zero
-\begin{tabular}{|p{2cm}|p{10cm}|p{1cm}|}
+\begin{tabular}{|p{2cm}|p{10cm}|} %p{1cm}|}
   \hline
-  Constraint & Description & Points \\
+  Constraint & Description\\ % & Points \\
 
   \hline
-  Fonctional-1 & An user can create, delete, modify and view a meeting. & 2 pts \\
-  Fonctional-2 & Participants of a meeting can view their meetings. & 2 pts \\
-  Fonctional-3 & Participants of a meeting can leave a comment on the meeting. & 2 pts \\
-  Fonctional-4 & New meetings appears automagically without reloading the page (AJAX). & 2 pts \\
-  Fonctional-5 & Implement a feature that improves the application & 2 pts \\
+  Fonctional-1 & An user can create, delete, modify and view a contest. \\% & 2 pts \\
+  Fonctional-2 & Player can view his contests. \\%  & 2 pts \\
+  Fonctional-3 & Participants of a contest can leave a comment on the contest. \\% & 2 pts \\
+  Fonctional-4 & New contest appears automatically without reloading the page (AJAX). \\% & 2 pts \\
+  Fonctional-5 & Implement a feature that improves the application \\% & 2 pts \\
   \hline
-  Total & \multicolumn{2}{r|}{   10 pts \hspace{1 mm}} \\
+  %Total & \multicolumn{2}{r|}{   10 pts \hspace{1 mm}} \\
   \hline
-  Bonus & The application is usable by members of the C.S. department. & 3 pts \\
+  Bonus & The application is usable by MDE .\\%  & 3 pts \\
 
   \hline
 \end{tabular}
@@ -135,38 +135,38 @@ this web application}, such as providing:
 \zero
 \begin{tabular}{|p{2cm}|p{10cm}|p{1cm}|}
   \hline
-  Constraint & Description & Points \\
+  Constraint & Description \\%  & Points \\
 
   \hline
-  Controller-1 & Develop a controller for the frontend & 1 pts \\
-  Controller-3 & At least one controller asks data with a custom SQL query & 1 pts \\
+  Controller-1 & Develop a controller for the frontend \\% & 1 pts \\
+  Controller-3 & At least one controller asks data with a custom SQL query \\% & 1 pts \\
 
   \hline
-  View-1 & Display data (a list) with HTML & 2 pts \\
-  View-2 & Display data (an element) with details & 1 pts \\
-  View-3 & Create a transition between 2 views & 1 pts \\
+  View-1 & Display data (a list) with HTML \\% & 2 pts \\
+  View-2 & Display data (an element) with details \\% & 1 pts \\
+  View-3 & Create a transition between 2 views \\% & 1 pts \\
 
   \hline
-  Database-1 & Database contains at least one complex entity (that contains a set of other entities, cf appendix \ref{complex_entity}) & 3 pts \\
+  Database-1 & Database contains at least one complex entity (that contains a set of other entities) \\% & 3 pts \\
 
   \hline
-  CRUD & At least one complex data entity have create, read, update and delete actions. These actions are located in the backend. & 3 pts \\
+  CRUD & At least one complex data entity have create, read, update and delete actions. These actions are located in the backend. \\% & 3 pts \\
 
   \hline
-  AJAX-1 & At least one controller have a method that produce JSON or XML. & 2 pts \\
-  AJAX-2 & At least one view gets data dynamically with an AJAX request. & 2 pts \\
+  AJAX-1 & At least one controller have a method that produce JSON or XML. \\% & 2 pts \\
+  AJAX-2 & At least one view gets data dynamically with an AJAX request. \\% & 2 pts \\
 
   \hline
-  Design-1 & Use a CSS framework (Bootstrap\ntm, Zurb Foundation \ntm, PureCSS\ntm, ...). & 1 pts \\
-  Design-2 & The application is simple and friendly to use & 2 pts \\
-  Design-3 & The application has been developed around prototyping methodology. \ntm & 1 pts \\
+  Design-1 & Use a CSS framework (Bootstrap\ntm, Zurb Foundation \ntm, PureCSS\ntm, ...). \\% & 1 pts \\
+  Design-2 & The application is simple and friendly to use \\% & 2 pts \\
+  Design-3 & The application has been developed around prototyping methodology. \ntm \\% & 1 pts \\
 
   \hline
-  Total & \multicolumn{2}{r|}{   20 pts \hspace{1 mm}} \\
+  %Total & \multicolumn{2}{r|}{   20 pts \hspace{1 mm}} \\
 
-  \hline
-  Bonus-1 & Integrate the application with members given by LDAP. & 2 pts \\
-  \hline
+  %\hline
+  %Bonus-1 & Integrate the application with members given by LDAP. \\% & 2 pts \\
+  %\hline
 \end{tabular}
 
 \initnt
@@ -184,9 +184,8 @@ Evaluation will be made during an oral defense : a jury will check if the studen
 \[\text{finalMark} = \frac{\text{technicalMark} + \text{functionalMark} + \text{oralMark}}{2}\]
 
 
-\begin{appendices}
-
-\end{appendices}
+%\begin{appendices}
+%\end{appendices}
 
 
 \end{document} 
